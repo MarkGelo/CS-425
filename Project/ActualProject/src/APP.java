@@ -1,3 +1,5 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.sql.*;
 import java.util.Properties;
 import java.util.Scanner;
@@ -5,6 +7,7 @@ import java.io.File;
 
 public class APP {
     public static String url = "jdbc:postgresql://localhost/postgres";
+    public static String filepath = "C:/Users/mlgam/OneDrive/Desktop/CS Projects/CS-425/Project/ActualProject/src/logins.csv";
     //postgresql database user login password
     public static String user;
     public static String password;
@@ -23,6 +26,7 @@ public class APP {
                                 "G: Grant" + "\n" +
                                 "S: Sales Report" + "\n" +
                                 "B: Business Report" + "\n" +
+                                "CE: Create User" + "\n" +
                                 "E: Exit";
 
     public static void main(String[] args){
@@ -75,6 +79,9 @@ public class APP {
                 case "B"://business report
                     dbm.businessReport();
                     break;
+                case "CE"://create user
+                    dbm.createUser(filepath, null, null, null);
+                    break;
                 default:
                     System.out.println("Invalid choice" + "\n" + "Choose again");
                     break;
@@ -104,7 +111,7 @@ public class APP {
     }
 
     public static boolean checkLogin(){
-        File file = new File("C:/Users/mlgam/OneDrive/Desktop/CS Projects/CS-425/Project/ActualProject/src/logins.csv");
+        File file = new File(filepath);
         try{
             Scanner in = new Scanner(file);
             in.nextLine(); //skip first line
