@@ -8,6 +8,7 @@ import java.util.Scanner;
 import java.util.Vector;
 
 //make method to drop table?
+//make method just so user can type the sql statement themselves and execute it?
 
 public class DBM {
     Connection con;
@@ -79,7 +80,7 @@ public class DBM {
     public void view() {//TODO select
         //sales can view customer, orders, ordermodels, Inventory
         //engineers can view model, inventory, and partial employee - made a view specifically for it, hmm how to access that
-        //hr can view employee and orders - says can view employee and associated sales number hmmm
+        //hr can view employee and orders - project description says can view employee and associated sales number hmmm
     }
 
     public void insert() {
@@ -386,10 +387,11 @@ public class DBM {
     }
 
     public void salesReport() {//TODO
-        //for sales and maybe hr??? and ofc admins
+        //for sales and ofc admins
+        //says on project description, sales person can view salesreport hmmm
     }
 
     public void businessReport() {//TODO
-        //view for admins or create
+        //to view for admins or create
     }
 }
