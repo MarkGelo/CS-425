@@ -182,4 +182,8 @@ public class APP {
                 break;
         }
     }
+
+    public static void forceExit(){
+        System.exit(1);
+    }
 }
