@@ -234,7 +234,7 @@ public class DBM {
             resultSet.close();
         } catch (SQLException e) {
             //System.out.println("Connect fail.");
-            System.out.println("Invalid - Shutting down");
+            System.out.println("You cannot see it - Shutting down");
             APP.forceExit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -259,7 +259,7 @@ public class DBM {
         }else if(access.equalsIgnoreCase("Engineering") && (!table.equalsIgnoreCase("Model") && !table.equalsIgnoreCase("Inventory"))){
             System.out.println("No Access");
             return;
-        }else if(access.equalsIgnoreCase("HR")){
+        }else if(access.equalsIgnoreCase("HR") && !table.equalsIgnoreCase("Employee")){
             System.out.println("No Access");
             return;
         }
